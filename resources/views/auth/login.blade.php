@@ -10,23 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body style="background: var(--secondary-pink);">
-<menu>
-    <nav>
-        <p>Главная</p>
-        <p>О Лаки</p>
-        <p>Поддержка</p>
-        <p>Блог</p>
-        <p>Регистрация</p>
-        <p>Вход</p>
-    </nav>
-    </menu>
-    <h1 class="register-h1">Регистрация</h1>
-    <form action="">
-        <input type="text" placeholder="имя" style="background-color:  #F4EBEB;">
-        <input type="email" placeholder="e-mail">
-        <input type="login" placeholder="логин">
-        <input type="password" placeholder="пароль">
-        <button>Зарегистрироваться</button>
+@extends('layouts.app')
+
+@section('content')
+    <h1 class="register-h1">Вход в аккаунт</h1>
+    <form action="{{ route('login') }}" method="POST" style="padding-right: 23%;">
+        @csrf
+        <input type="email" name="email" placeholder="e-mail" required>
+        <input type="password" name="password" placeholder="пароль" required>
+        <button type="submit">Войти</button>
     </form>
+@endsection
 </body>
 </html>

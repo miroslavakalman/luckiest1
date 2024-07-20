@@ -11,6 +11,7 @@
     --mont-weight: 500;
     --second-family: "Dela Gothic One", sans-serif;
     --dela-size: 36px;
+    --dela-size-d: 28px;
     --dela-color:  #ab7373;
     --dela-weight: 400;
     --button-fs: 16px;
@@ -18,6 +19,7 @@
 }
 
 body{
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,15 +48,23 @@ nav{
     flex-direction: row;
     justify-content: center;
     gap: 115px;
+    @media (max-width: 1220px) {
+        font-size: 16px;
+    }
 }
 
 main{
-    width: 1139px;
     height: 421px;
-    padding: 215px 0 123px 0;
+    padding-top: 215px;
+    padding-bottom: 123px;
     display: flex;
     flex-direction: row;
-    gap: 93px;
+    gap: 6%;
+    justify-content: center;
+    @media (max-width: 1220px) {
+        gap: 0;
+    }
+
 }
 
 .text-wrapper{
@@ -63,7 +73,7 @@ main{
     gap: 18px;
 }
 
-.text-wrapper h1, .support h1, .feedback h1, .blog h1{
+.text-wrapper h1, .support h1, .feedback h1, .blog h1, .note-h1{
     font-family: var(--second-family);
     color: var(--dela-color);
     size: var(--dela-size);
@@ -71,7 +81,9 @@ main{
     width: 531px;
     height: 40px;
 }
-
+.note-h1{
+    text-align: center;
+}
 .text-wrapper p{
     font-family: var(--font-family);
     font-weight: 600;
@@ -129,6 +141,9 @@ main img{
     display: flex;
     flex-direction: row;
     gap: 214px;
+    @media (max-width: 1220px) {
+        gap: 50px;  
+    }
 }
 
 .text-row p{
@@ -146,7 +161,8 @@ main img{
 .cards{
     display: flex;
     flex-direction: row;
-    gap: 30px;
+    gap: 2%;
+    justify-content: center;
 }
 
 .card{
@@ -156,6 +172,10 @@ main img{
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    @media (max-width: 1220px) {
+        width: 335px;
+        height: 315px;
+    }
 }
 
 .card h1{
@@ -176,20 +196,49 @@ main img{
     width: 318px;
     height: 120px;
     padding: 0px 20px 73px;
+    @media (max-width: 1220px) {
+        font-size: 16px;
+    }
 }
-
+.field-t{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--font-color-2);
+    text-align: left;
+}
+.field-p{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--font-color-2);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.text-field-notes{
+    background-color: #C09D9D;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+}
 .support{
     margin-top: 120px;
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 20px;
     color: var(--font-color-2);
+
 }
 
 .support-wrap{
     display: flex;
     flex-direction: row;
     gap: 194px;
+    @media (max-width: 1220px) {
+        padding-left: 7%;
+    }
 }
 
 .support-wrap img{
@@ -197,13 +246,20 @@ main img{
     height: 179px;
     margin-top: 56px;
 }
+.wrap1{
+    display: flex;
+    flex-direction: column;
+}
+
 
 .faq{
     display: flex;
     flex-direction: column;
     margin-top: 36px;
     gap: 8px;
-    padding-right: 21%;
+    @media (max-width: 1220px) {
+        padding-left: 7%;
+    }
 }
 
 .question{
@@ -227,9 +283,12 @@ main img{
 .feedback{
     display: flex;
     flex-direction: column;
-    padding-right: 21%;
+    /* padding-right: 21%; */
     margin-top: 120px;
     gap: 10px;
+    @media (max-width: 1220px) {
+        padding-left: 7%;
+    }
 }
 
 .feedback input, ::placeholder{
@@ -253,7 +312,11 @@ main img{
 .blog{
     margin-top: 120px;
 }
-
+.blog h1, .blog-p{
+    @media (max-width: 1220px) {
+        padding-left: 7%;
+    }
+}
 .blog-p{
     font-family: var(--font-family);
     font-weight: 500;
@@ -266,8 +329,14 @@ main img{
 .blog-cards{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 140px;
     margin-top: 80px;
+    
+    @media (max-width: 1220px) {
+        gap: 2%;
+        margin-top: 35px;
+    }
 }
 
 .b-card{
@@ -277,6 +346,10 @@ main img{
     height: 269px;
     padding-left: 35px;
     padding-top: 35px;
+    @media (max-width: 1220px) {
+        width: 380px;
+        height: 200px;
+    }
 }
 .b-card2{
     background: var(--font-color-2);
@@ -285,6 +358,10 @@ main img{
     height: 269px;
     padding-left: 35px;
     padding-top: 35px;
+    @media (max-width: 1220px) {
+        width: 380px;
+        height: 200px;
+    }
 }
 .s{
     font-family: var(--second-family);
@@ -293,7 +370,11 @@ main img{
     color: var(--font-color-2);
     width: 367px;
     height: 58px;
+    @media (max-width: 1220px) {
+        font-size: 16px;
+    }
 }
+
 .s1{
     font-family: var(--second-family);
     font-weight: 400;
@@ -301,6 +382,9 @@ main img{
     color: var(--white);
     width: 367px;
     height: 58px;
+    @media (max-width: 1220px) {
+        font-size: 16px;
+    }
 }
 .d{
     font-family: var(--font-family);
@@ -309,6 +393,10 @@ main img{
     color: var(--font-color-2);
     width: 400px;
     height: 100px;
+    @media (max-width: 1220px) {
+        font-size: 12px;
+        width: 280px;
+    }
 }
 .d1{
     font-family: var(--font-family);
@@ -317,15 +405,26 @@ main img{
     color: var(--white);
     width: 400px;
     height: 100px;
+    @media (max-width: 1220px) {
+        font-size: 12px;
+        width: 280px;
+    }
 }
 .b-card img, .b-card2 img{
     margin-left: 421px;
     margin-top: -40px;
+    @media (max-width: 1220px) {
+        display: none;
+    }
 }
 
 .blog button{
-    margin-left: 485px;
+    /* margin-left: 485px; */
+    margin-left: 40%;
     margin-top: 90px;
+    @media (max-width: 1220px) {
+        margin-top: 35px;
+    }
 }
 
 footer{
@@ -345,6 +444,10 @@ footer p{
     font-weight: 500;
     font-size: 20px;
     color: var(--white);
+
+    @media (max-width: 1220px) {
+        font-size: 16px;
+    }
 }
 
 .register-h1{
@@ -429,4 +532,77 @@ form input{
 
 .acc-block-mini img{
     margin-left: 180px;
+}
+
+.old-notes{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.note-wr, .note-wr-a{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 367px;
+    height: 46px;
+    background: var(--secondary-pink);
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    color: #fcfcfc;
+    padding-left: 12px;
+    text-decoration: none;
+}
+
+.a-style{
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--font-color-2);
+}
+
+.goal{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 367px;
+    height: 46px;
+    background: var(--secondary-pink);
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 14px;
+    color: #fcfcfc;
+    padding-left: 12px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+a{
+    text-decoration: none;
+} 
+
+.goal-c{
+    font-family: var(--second-family);
+    font-weight: 400;
+    font-size: 20px;
+    color: var(--font-color-2); 
+}
+
+
+textarea{
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.mood-item{
+    margin-top: 4%;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 6%;
 }

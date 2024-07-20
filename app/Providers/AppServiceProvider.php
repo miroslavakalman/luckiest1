@@ -1,24 +1,26 @@
 <?php
-
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
+use App\Models\Mood;
 
-class AppServiceProvider extends ServiceProvider
+class AuthServiceProvider extends ServiceProvider
 {
-    /**
-     * Register any application services.
-     */
-    public function register(): void
+    public function boot()
     {
-        //
-    }
+        $this->registerPolicies();
 
-    /**
-     * Bootstrap any application services.
-     */
-    public function boot(): void
-    {
-        //
+        Gate::define('view-mood', function ($user, $mood) {
+            return $user->id === $mood->user_id;
+        });
+
+        Gate::define('update-mood', function ($user, $mood) {
+            return $user->id === $mood->user_id;
+        });
+
+        Gate::define('delete-mood', function ($user, $mood) {
+            return $user->id === $mood->user_id;
+        });
     }
 }
